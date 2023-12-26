@@ -28,5 +28,13 @@ func main() {
 			fmt.Fprintf(os.Stderr, "fetch: error copying response body: %v\n", err)
 			os.Exit(1)
 		}
+		resp, err = http.Get(url)
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "fetch: %v\n", err)
+			os.Exit(1)
+		}
+		defer resp.Body.Close()
+		fmt.Println("\nThe status code we got is: ", resp.StatusCode)
 	}
+
 }
