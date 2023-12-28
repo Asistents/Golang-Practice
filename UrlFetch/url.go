@@ -1,3 +1,5 @@
+// Fetch displays the response to the request and the response code at the given URL
+
 package main
 
 import (
@@ -11,7 +13,7 @@ import (
 func main() {
 	for _, url := range os.Args[1:] {
 		str := "http://"
-		if strings.HasPrefix(url, "http:/") == false {
+		if strings.HasPrefix(url, str) == false {
 			str += url
 			url = str
 		}
